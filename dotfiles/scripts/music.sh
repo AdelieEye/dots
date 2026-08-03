@@ -10,22 +10,22 @@ choose="$({
                         -sb '#403833' \
                         -sf '#ebdbb2' )"
 
-[[ -z $choose ]] && exit 0
+[[ -z $choose ]] && exit
 
 if [[ $choose == "download" ]]; then
     link="$(wl-paste)"
-    echo "$link" >> music.txt
     link_cleaned="${link%%&list*}"
-    continue="$(echo "continue" | dmenu -b -i -l 15 \
-                            -p "$link_cleaned:"   \
+    name="$(echo "" | dmenu -b -i -l 15 \
+                            -p "name:"   \
                             -nb '#0d0401' \
                             -nf '#ebdbb2' \
                             -sb '#403833' \
                             -sf '#ebdbb2' )"
 
-    [[ -z $continue ]] && exit 0
-    cd "$HOME/music" || exit 0
-    yt-dlp -f ba "$link_cleaned"
+    [[ -z $name ]] && exit
+    cd "$HOME/music" || exit
+    yt-dlp -f ba "$link_cleaned" -o "$name.webm"
+    echo "$link" >> "$HOME/music.txt"
     notify-send "Download Done"
 else
     pkill ffplay &>/dev/null

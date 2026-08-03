@@ -11,6 +11,8 @@
             sl  = "swaylock -c 000000";
             z   = "zathura --fork";
             diff = "colordiff -y";
+            mk = "mkdir \"$(date +%F)\"";
+            ck = "cd \"$(date +%F)\"";
 
             "."  = "cd ..";
             ".." = "cd ../..";
