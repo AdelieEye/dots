@@ -1,0 +1,41 @@
+(defsrc
+                1     2     3     4     5         6     7     8     9     0
+        tab     q     w     e     r     t         y     u     i     o     p
+        caps    a     s     d     f     g         h     j     k     l     ;     '
+        lsft    z     x     c     v     b         n     m     ,     .     /
+                lmet  lalt                  spc               ralt  rctl
+  )
+
+(deflayer base
+                @l    @l    @l    @l    @l        @l    @l    @l    @l    @l
+        tab     q     w     e     r     t         y     u     i     o     p
+        bspc    a     s     d     f     g         h     j     k     l     ;     '
+        lsft    z     x     c     v     b         n     m     ,     .     /
+                lmet  lctl                  spc               ret   lalt
+        )
+
+(deflayer sym
+                _     _     _     _     _         _     _     _     _     _
+        _       XX    @\    grv   @-    @=        XX    4     5     6     '
+        _       XX    XX    @}    @{    @pr       @pl   1     2     3     0     _
+        _       XX    @<    @>    @[    @]        right 7     8     9     /
+                _     _                      _                _     _
+        )
+
+(defalias
+        [      [
+        {      S-[
+        }      S-]
+        ]      ]
+        \      \
+        -      -
+        =      =
+        /      /
+        pl     S-9
+        pr     S-0
+        <      S-,
+        >      S-.
+
+        l (layer-while-held sym)
+)
+
