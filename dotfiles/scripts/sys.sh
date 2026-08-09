@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-choose="$(printf "zen\nzathura\nwallpaper\nshutdown\nreboot\nkill" | dmenu -b -i -l 15 \
+choose="$(printf "run\nzathura\nwallpaper\nshutdown\nreboot\nkill" | dmenu -b -i -l 15 \
                         -p 'sys:'   \
                         -nb '#0d0401' \
                         -nf '#ebdbb2' \
@@ -9,8 +9,14 @@ choose="$(printf "zen\nzathura\nwallpaper\nshutdown\nreboot\nkill" | dmenu -b -i
 
 [[ -z $choose ]] && exit 0
 
-if [[ $choose == "zen" ]]; then
-    zen
+if [[ $choose == "run" ]]; then
+    dmenu_run -b -i -l 15 \
+                        -p 'run:'   \
+                        -nb '#0d0401' \
+                        -nf '#ebdbb2' \
+                        -sb '#403833' \
+                        -sf '#ebdbb2'
+
 elif [[ $choose == "zathura" ]]; then
     book="$(fd -tf . "$HOME/RES" | dmenu -b -i -l 15 \
                         -p 'sys:'   \
