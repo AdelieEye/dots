@@ -14,7 +14,7 @@
         fd
         ffmpeg
         figlet
-        gimp    
+        gimp
         gnumake
         hurl
         libnotify
