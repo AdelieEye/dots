@@ -44,11 +44,14 @@
         };
     };
 
+    #VM Config
+    programs.virt-manager.enable = true;
+    virtualisation.libvirtd.enable = true;
 
     users.users."_adelie" = {
         isNormalUser = true;
         description = "_adelie";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
         packages = with pkgs; [];
     };
 
