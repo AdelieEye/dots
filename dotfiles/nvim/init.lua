@@ -79,6 +79,7 @@ vim.pack.add({
     gh('catgoose/nvim-colorizer.lua'),
     gh('chrisgrieser/nvim-spider');
     gh('folke/flash.nvim');
+    gh('folke/todo-comments.nvim');
     gh('godlygeek/tabular');
     gh('hat0uma/csvview.nvim');
     gh('j-hui/fidget.nvim');
@@ -86,11 +87,10 @@ vim.pack.add({
     gh('lewis6991/gitsigns.nvim');
     gh('neovim/nvim-lspconfig');
     gh('nvim-lualine/lualine.nvim'), --
-    gh('nvim-mini/mini.ai');
     gh('nvim-mini/mini.pick');
     gh('sainnhe/gruvbox-material');
     gh('stevearc/quicker.nvim');
-    gh('windwp/nvim-autopairs'),
+    gh('windwp/nvim-autopairs');
 
     'https://git.sr.ht/~whynothugo/lsp_lines.nvim';
 })
@@ -119,6 +119,8 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 vim.g.gruvbox_material_background = 'soft'
 vim.g.gruvbox_material_better_performance = 1
 vim.cmd.colorscheme('gruvbox-material')
+
+require('vim._core.ui2').enable({})
 
 require('nvim-autopairs').setup({})
 require('colorizer').setup({})
@@ -213,6 +215,7 @@ vim.lsp.enable({
     'cssls',
     'superhtml',
     'ts_ls',
+    'denols',
     'tinymist',
     'jsonls',
     'basedpyright',
@@ -239,6 +242,8 @@ vim.keymap.set('n', '<leader>t', ':! tmux popup<CR>')
 vim.keymap.set('n', '<leader>f', ':Pick files<CR>')
 vim.keymap.set('n', '<leader>b', ':Pick buffers<CR>')
 vim.keymap.set('n', '<leader>j', ':TSJToggle<CR>')
+
+vim.keymap.set('i', '<Tab>', '<C-x><C-o>')
 
 vim.keymap.set({ "n", "x", "o" }, "s", function() require('flash').jump() end)
 vim.keymap.set({ "n", "x", "o" }, "S", function() require('flash').treesitter() end)
