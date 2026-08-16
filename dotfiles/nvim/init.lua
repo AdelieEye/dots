@@ -79,7 +79,6 @@ vim.pack.add({
     gh('catgoose/nvim-colorizer.lua'),
     gh('chrisgrieser/nvim-spider');
     gh('folke/flash.nvim');
-    gh('folke/todo-comments.nvim');
     gh('godlygeek/tabular');
     gh('hat0uma/csvview.nvim');
     gh('j-hui/fidget.nvim');
@@ -126,7 +125,6 @@ require('nvim-autopairs').setup({})
 require('colorizer').setup({})
 require('gitsigns').setup({})
 require('fidget').setup({})
-require('mini.ai').setup({})
 require('nvim-surround').setup({})
 require('treesj').setup({})
 require('csvview').setup({})

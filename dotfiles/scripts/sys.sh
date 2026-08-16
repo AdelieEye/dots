@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-choose="$(printf "run\nzathura\nwallpaper\nshutdown\nreboot\nkill" | dmenu -b -i -l 15 \
+choose="$(printf "zen\nrun\nzathura\nwallpaper\nshutdown\nreboot\nkill" | dmenu -b -i -l 15 \
                         -p 'sys:'   \
                         -nb '#0d0401' \
                         -nf '#ebdbb2' \
@@ -9,7 +9,10 @@ choose="$(printf "run\nzathura\nwallpaper\nshutdown\nreboot\nkill" | dmenu -b -i
 
 [[ -z $choose ]] && exit 0
 
-if [[ $choose == "run" ]]; then
+if [[ $choose == "zen" ]]; then
+    zen
+
+elif [[ $choose == "run" ]]; then
     dmenu_run -b -i -l 15 \
                         -p 'run:'   \
                         -nb '#0d0401' \
