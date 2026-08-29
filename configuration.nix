@@ -54,6 +54,10 @@
         extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
         packages = with pkgs; [];
     };
+    nix.settings.trusted-users = [
+        "root"
+        "_adelie"
+    ];
 
     nixpkgs.config.allowUnfree = true;
 
