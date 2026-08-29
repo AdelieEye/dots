@@ -7,7 +7,7 @@
         {
           "foreground": "#7E46B6",
           "style": "plain",
-          "template": "{{ if .Env.DEVSHELL_NAME }} {{ .Env.DEVSHELL_NAME }} {{ end }}",
+          "template": "{{ if .Env.DEVSHELL_NAME }} {{.Env.DEVSHELL_NAME }} {{ end }}",
           "type": "text"
         },
         {

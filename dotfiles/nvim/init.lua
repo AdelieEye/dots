@@ -257,4 +257,8 @@ vim.keymap.set({ "n", "o", "x" }, "e",  function() require("spider").motion("e")
 vim.keymap.set({ "n", "o", "x" }, "b",  function() require("spider").motion("b") end)
 vim.keymap.set({ "n", "o", "x" }, "ge", function() require("spider").motion("ge") end)
 
+vim.keymap.set("n", "<leader>h", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
+
 -- ========================= __END__ =========================
