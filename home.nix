@@ -4,7 +4,6 @@
     imports = [
         ./include/bash.nix
         ./include/delta.nix
-        ./include/dir_source.nix
         ./include/git.nix
         ./include/kitty.nix
         ./include/nvim.nix
@@ -18,5 +17,4 @@
     home.username = "_adelie";
     home.homeDirectory = "/home/_adelie";
     home.stateVersion = "26.05";
-
 }

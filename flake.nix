@@ -6,7 +6,7 @@
         nixpkgs-unstable.url = "github:NixOs/nixpkgs/nixos-unstable";
         home-manager = {
             url = "github:nix-community/home-manager/release-26.05";
-            inputs.nixpkgs.follows = "nixpkgs";     
+            inputs.nixpkgs.follows = "nixpkgs";
         };
 
         zen-browser = {
@@ -15,12 +15,12 @@
         };
     };
 
-    outputs = { 
-        nixpkgs, 
-        nixpkgs-unstable, 
-        home-manager, 
-        zen-browser, 
-        ... 
+    outputs = {
+        nixpkgs,
+        nixpkgs-unstable,
+        home-manager,
+        zen-browser,
+        ...
     }:
     let
         system = "x86_64-linux";

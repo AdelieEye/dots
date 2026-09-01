@@ -16,6 +16,7 @@
             lua-language-server
             nixd
             clang-tools
+            elmPackages.elm-language-server
             bash-language-server
             vscode-css-languageserver
             superhtml
@@ -31,6 +32,7 @@
                   p.cpp
                   p.nix
                   p.lua
+                  p.elm
                   p.javascript
                   p.typescript
                   p.hurl

@@ -9,7 +9,7 @@
         btop
         caligula
         colordiff
-        devenv
+        elmPackages.elm
         entr
         fastfetch
         fd
