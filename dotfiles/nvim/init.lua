@@ -23,6 +23,7 @@ vim.opt.incsearch = true
 vim.o.splitright = true
 vim.o.splitbelow = true
 
+vim.o.exrc = true;
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -240,7 +241,7 @@ vim.keymap.set('n', '<leader>t', ':! tmux popup<CR>')
 vim.keymap.set('n', '<leader>f', ':Pick files<CR>')
 vim.keymap.set('n', '<leader>b', ':Pick buffers<CR>')
 vim.keymap.set('n', '<leader>j', ':TSJToggle<CR>')
-vim.keymap.set('n', '<leader>h', ':split<CR>')
+vim.keymap.set('n', '<leader>s', ':split<CR>')
 vim.keymap.set('n', '<leader>v', ':vsplit<CR>')
 
 vim.keymap.set('i', '<Tab>', '<C-x><C-o>')
