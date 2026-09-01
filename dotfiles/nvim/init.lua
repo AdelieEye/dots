@@ -24,6 +24,7 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 
 vim.o.exrc = true;
+
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -101,7 +102,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
         vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
         vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
         vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
-        vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+        vim.api.nvim_set_hl(0, "LineNr", { fg ="#4c4c4c", bg = "none" })
         vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
         vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
 
@@ -123,13 +124,12 @@ vim.cmd.colorscheme('gruvbox-material')
 require('vim._core.ui2').enable({})
 
 require('nvim-autopairs').setup({})
-require('colorizer').setup({})
-require('gitsigns').setup({})
-require('fidget').setup({})
-require('nvim-surround').setup({})
-require('treesj').setup({})
-require('csvview').setup({})
-require('flash').setup({})
+require('colorizer'     ).setup({})
+require('fidget'        ).setup({})
+require('nvim-surround' ).setup({})
+require('treesj'        ).setup({})
+require('csvview'       ).setup({})
+require('flash'         ).setup({})
 
 require('lualine').setup({
     options = {
@@ -152,6 +152,14 @@ require('lualine').setup({
                 end
             },
         },
+    },
+})
+
+require('gitsigns').setup({
+    signs = {
+        add    = {text = "//"},
+        change = {text = "//"},
+        delete = {text = "||"},
     },
 })
 
@@ -218,6 +226,7 @@ vim.lsp.enable({
     'tinymist',
     'jsonls',
     'basedpyright',
+    'elmls'
 })
 
 vim.lsp.inlay_hint.enable(false)
@@ -233,16 +242,21 @@ vim.lsp.config('lua_ls', {
 
 -- ========================= KEYMAPS =========================
 
-vim.keymap.set('n', '<Esc>', ':noh<CR>')
-vim.keymap.set('i', 'jk', '<Esc>')
-vim.keymap.set('n', '<leader>w', ':update<CR>')
-vim.keymap.set('n', '<leader>x', ':x<CR>')
+vim.keymap.set('n', '<Esc>'    , ':noh<CR>'         )
+vim.keymap.set('i', 'jk'       , '<Esc>'            )
+vim.keymap.set('n', '<leader>w', ':update<CR>'      )
+vim.keymap.set('n', '<leader>x', ':x<CR>'           )
 vim.keymap.set('n', '<leader>t', ':! tmux popup<CR>')
-vim.keymap.set('n', '<leader>f', ':Pick files<CR>')
+vim.keymap.set('n', '<leader>f', ':Pick files<CR>'  )
 vim.keymap.set('n', '<leader>b', ':Pick buffers<CR>')
-vim.keymap.set('n', '<leader>j', ':TSJToggle<CR>')
-vim.keymap.set('n', '<leader>s', ':split<CR>')
-vim.keymap.set('n', '<leader>v', ':vsplit<CR>')
+vim.keymap.set('n', '<leader>j', ':TSJToggle<CR>'   )
+vim.keymap.set('n', '<leader>s', ':split<CR>'       )
+vim.keymap.set('n', '<leader>v', ':vsplit<CR>'      )
+
+vim.keymap.set( 'n' , '<C-Up>   ' , ':resize +2<CR>         ' )
+vim.keymap.set( 'n' , '<C-Down> ' , ':resize -2<CR>         ' )
+vim.keymap.set( 'n' , '<C-Left> ' , ':vertical resize -2<CR>' )
+vim.keymap.set( 'n' , '<C-Right>' , ':vertical resize +2<CR>' )
 
 vim.keymap.set('i', '<Tab>', '<C-x><C-o>')
 
@@ -262,6 +276,9 @@ vim.keymap.set({ "n", "o", "x" }, "ge", function() require("spider").motion("ge"
 
 vim.keymap.set("n", "<leader>h", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
+vim.keymap.set("n", "<leader>cs", function()
+    vim.cmd('set spell!')
 end)
 
 vim.keymap.set('n', '<leader>cp', ':r $HOME/template/cp.cpp<CR>')

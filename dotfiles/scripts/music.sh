@@ -25,13 +25,18 @@ if [[ $choose == "download" ]]; then
     [[ -z $name ]] && exit
     cd "$HOME/music" || exit
     yt-dlp -f ba "$link_cleaned" -o "$name.webm"
-    echo "$link" >> "$HOME/music.txt"
-    notify-send "Download Done"
+
+    status=$?
+    if [ "$status" -ne 0 ]; then
+        notify-send "yt-dlp failed with exit code: $status"
+    else
+        echo "$name -> $link" >> "$HOME/music.txt"
+        notify-send "$name, Download Done"
+    fi
+
 else
     pkill ffplay &>/dev/null
     ffplay  \
-        -nodisp   \
-        -autoexit \
         -loop 0   \
         -loglevel quiet \
         "$choose" \
