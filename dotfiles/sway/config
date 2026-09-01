@@ -5,9 +5,9 @@ set $up k
 set $right l
 set $term kitty
 
-bindsym $mod+a exec $HOME/dots/dotfiles/scripts/project_picker.sh
-bindsym $mod+s exec $HOME/dots/dotfiles/scripts/music.sh
-bindsym $mod+d exec $HOME/dots/dotfiles/scripts/sys.sh
+bindsym $mod+n exec $HOME/dots/dotfiles/scripts/project_picker.sh
+bindsym $mod+r exec $HOME/dots/dotfiles/scripts/music.sh
+bindsym $mod+t exec $HOME/dots/dotfiles/scripts/sys.sh
 
 exec sh -c 'ls $HOME/bg | shuf -n1 | xargs -I{} swaybg -i "$HOME/bg/{}"'
 
@@ -30,7 +30,7 @@ bindsym $mod+q kill
 floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
@@ -42,38 +42,38 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+j workspace number 1
-bindsym $mod+k workspace number 2
-bindsym $mod+l workspace number 3
-bindsym $mod+u workspace number 4
-bindsym $mod+i workspace number 5
-bindsym $mod+o workspace number 6
-bindsym $mod+m workspace number 7
-bindsym $mod+comma workspace number 8
-bindsym $mod+period workspace number 9
-bindsym $mod+semicolon workspace number 10
+bindsym $mod+a workspace number 1
+bindsym $mod+e workspace number 2
+bindsym $mod+i workspace number 3
+bindsym $mod+f workspace number 4
+bindsym $mod+o workspace number 5
+bindsym $mod+u workspace number 6
+bindsym $mod+p workspace number 7
+bindsym $mod+apostrophe workspace number 8
+bindsym $mod+semicolon workspace number 9
+bindsym $mod+h workspace number 10
 
-bindsym $mod+Shift+j move container to workspace number 1
-bindsym $mod+Shift+k move container to workspace number 2
-bindsym $mod+Shift+l move container to workspace number 3
-bindsym $mod+Shift+u move container to workspace number 4
-bindsym $mod+Shift+i move container to workspace number 5
-bindsym $mod+Shift+o move container to workspace number 6
-bindsym $mod+Shift+m move container to workspace number 7
-bindsym $mod+Shift+comma move container to workspace number 8
-bindsym $mod+Shift+period move container to workspace number 9
-bindsym $mod+Shift+semicolon move container to workspace number 10
+bindsym $mod+Shift+a move container to workspace number 1
+bindsym $mod+Shift+e move container to workspace number 2
+bindsym $mod+Shift+i move container to workspace number 3
+bindsym $mod+Shift+f move container to workspace number 4
+bindsym $mod+Shift+o move container to workspace number 5
+bindsym $mod+Shift+u move container to workspace number 6
+bindsym $mod+Shift+p move container to workspace number 7
+bindsym $mod+Shift+apostrophe move container to workspace number 8
+bindsym $mod+Shift+semicolon move container to workspace number 9
+bindsym $mod+Shift+h move container to workspace number 10
 
 bindsym $mod+b splith
 bindsym $mod+v splitv
 
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+s layout toggle split
 
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-bindsym $mod+f fullscreen
+bindsym $mod+Shift+plus fullscreen
 
 bindsym $mod+Shift+space floating toggle
 
@@ -96,7 +96,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+Shift+r mode "resize"
 
     bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
     bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%

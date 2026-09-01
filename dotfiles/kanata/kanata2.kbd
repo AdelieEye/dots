@@ -1,0 +1,59 @@
+(defsrc
+                1     2     3     4     5         6     7     8     9     0
+        tab     q     w     e     r     t         y     u     i     o     p
+        caps    a     s     d     f     g         h     j     k     l     ;     '
+        lsft    z     x     c     v     b         n     m     ,     .     /
+                lmet  lalt                  spc               ralt  rctl
+  )
+
+(deflayer base
+                @l    @l    @l    @l    @l        @l    @l    @l    @l    @l
+        tab     b     l     d     c     v         j     f     o     u     ,
+        @cbs    n     r     t     s     g         y     h     a     e     i     @:
+        lsft    x     q     m     w     z         k     p     '     ;     .
+                lmet  lctl                  spc               @str  lalt
+        )
+
+(deflayer sym
+                _     _     _     _     _         _     _     _     _     _
+        _       XX    @\    XX    XX    @+        @=    4     5     6     '
+        @cw     @<    @>    @}    @{    @pr       @pl   0     1     2     3     _
+        _       XX    XX    @-    @[    @]        right 7     8     9     /
+                _     _                      _                _     _
+        )
+
+(defalias
+        [      [
+        {      S-[
+        }      S-]
+        ]      ]
+        \      \
+        -      -
+        +      S-=
+        =      =
+        /      /
+        pl     S-9
+        pr     S-0
+        <      S-,
+        >      S-.
+        :      S-;
+
+        cw (macro C-w)
+        cbs (macro C-bspc)
+
+        str (switch
+            ((key-history n 1)) b break
+            ((key-history r 1)) l break
+            ((key-history t 1)) d break
+            ((key-history s 1)) c break
+            ((key-history g 1)) v break
+            ((key-history y 1)) j break
+            ((key-history h 1)) f break
+            ((key-history a 1)) o break
+            ((key-history e 1)) u break
+            ((key-history i 1)) , break
+            )
+
+        l (layer-while-held sym)
+)
+

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
     imports = [ ./hardware-configuration.nix ];
@@ -36,7 +36,7 @@
         keyboards = {
             "kbd" = {
                 devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd" ];
-                config = builtins.readFile ./dotfiles/kanata/kanata.kbd;
+                config = builtins.readFile ./dotfiles/kanata/kanata2.kbd;
                 extraDefCfg = ''
                     process-unmapped-keys yes
                     '';
@@ -69,8 +69,8 @@
     ];
 
     fonts.packages = with pkgs; [
-        nerd-fonts.jetbrains-mono   
-        noto-fonts-cjk-sans  
+        nerd-fonts.jetbrains-mono
+        noto-fonts-cjk-sans
     ];
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
