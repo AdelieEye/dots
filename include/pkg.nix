@@ -4,10 +4,11 @@
     home.packages = with pkgs; [
 
         bat
+        bat-extras.batgrep
+        bat-extras.batman
         btop
         caligula
         colordiff
-        deno
         devenv
         entr
         fastfetch
@@ -16,17 +17,15 @@
         figlet
         gimp
         gnumake
-        hurl
         libnotify
+        man-pages
         moreutils
-        nodejs
         parallel
         pass
         presenterm
         ripgrep
         secretspec
         swaybg
-        tealdeer
         tmux
         tree
         typst
