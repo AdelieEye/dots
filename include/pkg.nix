@@ -8,8 +8,10 @@
         bat-extras.batman
         btop
         caligula
+        clang-tools
         colordiff
         elmPackages.elm
+        emacs
         entr
         fastfetch
         fd
